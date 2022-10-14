@@ -1,3 +1,17 @@
+/* mudar a cor do site  criando uma variavel*/
+:root {
+    --primary: #a406ff;
+    --secundary: #890197;
+    --secundary-dark: #B927C8;
+    --grey-0: #000;
+    --grey-200: #0c0c0c;
+    --grey-400: #141414;
+    --grey-600: #818181;
+    --grey-800: #d3d3d3;
+    --grey-1000: #FFF;
+
+}
+
 html, body{
     margin: 0;
     padding: 0;
@@ -5,18 +19,38 @@ html, body{
 }
 
 body{
-    background-color: rgb(231, 222, 222);
-    color: black;
+    background: var(--grey-0);
+    color: var(--grey-1000);
 }
 
 /* aqui tira o underline dos links e coloca cor neles */
 a{
-    color:#fff;
+    color: var(--primary);
     text-decoration: none;
 }
 
-header{
-    background: #782121;
+button{
+    background: var(--secundary);
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: var(--grey-1000);
+    cursor: pointer;
+    /* ADICIONA BORDA AO REDOR DO BOTÃO */
+    /* border: solid #FFF 1px; */
+}
+
+button:hover{
+    background: var(--secundary-dark);
+}
+
+.flex-sb {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+body > header{
+    background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
     height: 50px;
 }
 
@@ -43,19 +77,19 @@ header{
 }
 
 #logo svg{
-    width: 40px;
-    height: 45px;
+    width: 30px;
+    height: 35px;
     margin: 0 10px 0 0;
-    fill: yellow;
+    fill: var(--primary);
 }
 
 #logo h1{
-    color: #782121;
+    color: var(--primary);
     margin: 0;
 }
 
 #logo h1 span{
-    color: #FFF;
+    color: var(--grey-1000);
     font-weight: 400;
 }
 
@@ -79,14 +113,78 @@ header{
 }
 
 #main-nav ul li a{
-    color: #FFF;
+    color: var(--grey-800);
     font-size: 1.2rem;
     padding: 10px;
 }
 
+#main-nav ul li a:hover{
+    color: var(--grey-1000);
+}
+
 /* especificar onde colocar o active */
 .active, #main-nav ul li a.active{
-    color: #eee9e9;
+    color: var(--primary);
     font-weight: 700;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid var(--primary);
+}
+
+#content-header{
+    margin-top: 20px;
+}
+
+.section-title{
+    border-left: 4px solid var(--secundary);
+    padding: 10px 0px 10px 15px;
+}
+
+#productions {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+#productions .card-movie{
+    width: 235px;
+    background: #451531;
+    border-radius: 10px;
+    margin: 20px;
+    position: relative;
+}
+
+#productions .card-movie a .mask{
+    position: absolute;
+    background-color: #451531;
+    width: 100%;
+    height: 353.13;
+    padding: 0;
+}
+
+
+/* aqui coloca borda nas imagens dos filmes */
+#productions .card-movie img{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#productions .card-movie div{
+    padding: 10px;
+}
+
+#productions .card-movie a div h2{
+    margin:  0 0 5px 0;
+    color: var(--grey-1000);
+}
+
+#productions .card-movie a div p{
+    margin: 0 0 5px 0;
+    color: var(--primary);
+}
+
+body > footer{
+    background: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    color: var(--grey-600);
+    text-align: center;
+    padding: 40px 40px;
 }
